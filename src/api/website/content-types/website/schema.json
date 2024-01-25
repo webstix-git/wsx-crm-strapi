@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "websites",
+  "info": {
+    "singularName": "website",
+    "pluralName": "websites",
+    "displayName": "Website",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "websiteName": {
+      "type": "string"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "agreement": {
+      "type": "dynamiczone",
+      "components": [
+        "agreement.agreement",
+        "agreement.payment-history"
+      ]
+    },
+    "loginInfo": {
+      "type": "dynamiczone",
+      "components": [
+        "login-info.login-info"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_agreement_agreements",
+  "info": {
+    "displayName": "agreement",
+    "icon": "thumbUp",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "agreementName": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service"
+    }
+  }
+}

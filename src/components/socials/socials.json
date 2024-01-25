@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_socails_socials",
+  "info": {
+    "displayName": "SocialLinks",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "URL": {
+      "type": "string"
+    }
+  }
+}

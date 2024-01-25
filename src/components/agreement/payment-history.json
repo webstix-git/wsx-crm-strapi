@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_agreement_payment_histories",
+  "info": {
+    "displayName": "paymentHistory",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "transName": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "transDetail": {
+      "type": "text"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service"
+    },
+    "transDate": {
+      "type": "date"
+    },
+    "blocks": {
+      "type": "integer"
+    },
+    "purchasedThrough": {
+      "type": "enumeration",
+      "enum": [
+        "Pay Now Form",
+        "Maintenace Blocks Page",
+        "Cheque",
+        "Cash",
+        "Wire Transfer"
+      ]
+    }
+  }
+}

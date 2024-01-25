@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Company",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string"
+    },
+    "Address": {
+      "type": "component",
+      "repeatable": true,
+      "component": "address.address"
+    },
+    "comapnyWebsite": {
+      "type": "string"
+    },
+    "companyLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "industry": {
+      "type": "enumeration",
+      "enum": [
+        "Retail",
+        "E-commerce",
+        "Digital Marketing",
+        "Financial Services",
+        "Healthcare",
+        "Real Estate",
+        "Hospitality",
+        "Manufacturing",
+        "Technology",
+        "Telecommunications",
+        "Education",
+        "Automotive",
+        "Professional Services",
+        "Nonprofit",
+        "Travel and Tourism",
+        "Insurance",
+        "Energy",
+        "Media and Entertainment",
+        "Pharmaceuticals",
+        "Government",
+        "Agriculture",
+        "Others"
+      ]
+    },
+    "companySize": {
+      "type": "string"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "socials.socials"
+    },
+    "contacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact.contact"
+    },
+    "Partner": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

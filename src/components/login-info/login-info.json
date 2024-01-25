@@ -1,0 +1,65 @@
+{
+  "collectionName": "components_login_info_login_infos",
+  "info": {
+    "displayName": "loginInfo",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "loginName": {
+      "type": "string"
+    },
+    "loginURL": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "loginType": {
+      "type": "enumeration",
+      "enum": [
+        "FTP Info",
+        "DNS Info",
+        "Control Panel Info",
+        "SEO Info",
+        "Payment Gateway Info",
+        "Newsletter Info",
+        "CRM Info",
+        "GitHub Info",
+        "Gitlab Info",
+        "Software Info",
+        "Vendor Info",
+        "Plugin Info",
+        "CloudFlare Info",
+        "CDN Info",
+        "Other Info"
+      ]
+    },
+    "PIN": {
+      "type": "string"
+    },
+    "otherInfo": {
+      "type": "text"
+    },
+    "twoFAEnabled": {
+      "type": "boolean"
+    },
+    "twoFAInfo": {
+      "type": "text"
+    },
+    "serverName": {
+      "type": "string"
+    },
+    "IPAddress": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
