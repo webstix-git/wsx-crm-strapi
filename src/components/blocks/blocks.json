@@ -2,7 +2,8 @@
   "collectionName": "components_blocks_blocks",
   "info": {
     "displayName": "Blocks",
-    "icon": "chartBubble"
+    "icon": "chartBubble",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -44,10 +45,10 @@
     "approvedScheduled": {
       "type": "boolean"
     },
-    "admin_user": {
+    "employee": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "admin::user"
+      "target": "api::employee.employee"
     }
   }
 }

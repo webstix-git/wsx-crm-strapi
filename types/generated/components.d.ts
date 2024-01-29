@@ -96,6 +96,7 @@ export interface BlocksBlocks extends Schema.Component {
   info: {
     displayName: 'Blocks';
     icon: 'chartBubble';
+    description: '';
   };
   attributes: {
     jobTitle: Attribute.String;
@@ -119,7 +120,11 @@ export interface BlocksBlocks extends Schema.Component {
     creditDebit: Attribute.String;
     referenceURL: Attribute.String;
     approvedScheduled: Attribute.Boolean;
-    admin_user: Attribute.Relation<'blocks.blocks', 'oneToOne', 'admin::user'>;
+    employee: Attribute.Relation<
+      'blocks.blocks',
+      'oneToOne',
+      'api::employee.employee'
+    >;
   };
 }
 
