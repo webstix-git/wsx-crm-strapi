@@ -32,6 +32,12 @@
       "components": [
         "login-info.login-info"
       ]
+    },
+    "blocksHistory": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.blocks"
+      ]
     }
   }
 }

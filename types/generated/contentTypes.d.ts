@@ -887,6 +887,67 @@ export interface ApiContactContact extends Schema.CollectionType {
   };
 }
 
+export interface ApiEmployeeEmployee extends Schema.CollectionType {
+  collectionName: 'employees';
+  info: {
+    singularName: 'employee';
+    pluralName: 'employees';
+    displayName: 'Employee';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    empName: Attribute.String;
+    empID: Attribute.String;
+    joiningDate: Attribute.Date;
+    designation: Attribute.String;
+    department: Attribute.Enumeration<
+      ['Presales', 'Design', 'Projects', 'Support', 'QA', 'SEO', 'Managment']
+    >;
+    empEmail: Attribute.String;
+    bloodGroup: Attribute.Enumeration<
+      [
+        'A positive (A+)',
+        'A negative (A-)',
+        'B positive (B+)',
+        'B negative (B-)',
+        'O positive (O+)',
+        'O negative (O-)',
+        'AB positive (AB+)',
+        'AB negative (AB-)'
+      ]
+    >;
+    location: Attribute.Enumeration<
+      ['Chennai (IN)', 'Coimbatore (IN)', 'Madison (US)']
+    >;
+    personalEmail: Attribute.String;
+    empPhone: Attribute.String;
+    emergencyContact: Attribute.Component<'employee.emergency-contact', true>;
+    attachments: Attribute.Component<'employee.attachments', true>;
+    active: Attribute.Boolean;
+    tempAddress: Attribute.Component<'address.india-address'>;
+    permanentAddress: Attribute.Component<'address.india-address'>;
+    profilePic: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::employee.employee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::employee.employee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -947,6 +1008,7 @@ export interface ApiWebsiteWebsite extends Schema.CollectionType {
       ['agreement.agreement', 'agreement.payment-history']
     >;
     loginInfo: Attribute.DynamicZone<['login-info.login-info']>;
+    blocksHistory: Attribute.DynamicZone<['blocks.blocks']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -985,6 +1047,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::company.company': ApiCompanyCompany;
       'api::contact.contact': ApiContactContact;
+      'api::employee.employee': ApiEmployeeEmployee;
       'api::service.service': ApiServiceService;
       'api::website.website': ApiWebsiteWebsite;
     }

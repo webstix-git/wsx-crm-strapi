@@ -1,0 +1,103 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "Employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "empName": {
+      "type": "string"
+    },
+    "empID": {
+      "type": "string"
+    },
+    "joiningDate": {
+      "type": "date"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "department": {
+      "type": "enumeration",
+      "enum": [
+        "Presales",
+        "Design",
+        "Projects",
+        "Support",
+        "QA",
+        "SEO",
+        "Managment"
+      ]
+    },
+    "empEmail": {
+      "type": "string"
+    },
+    "bloodGroup": {
+      "type": "enumeration",
+      "enum": [
+        "A positive (A+)",
+        "A negative (A-)",
+        "B positive (B+)",
+        "B negative (B-)",
+        "O positive (O+)",
+        "O negative (O-)",
+        "AB positive (AB+)",
+        "AB negative (AB-)"
+      ]
+    },
+    "location": {
+      "type": "enumeration",
+      "enum": [
+        "Chennai (IN)",
+        "Coimbatore (IN)",
+        "Madison (US)"
+      ]
+    },
+    "personalEmail": {
+      "type": "string"
+    },
+    "empPhone": {
+      "type": "string"
+    },
+    "emergencyContact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "employee.emergency-contact"
+    },
+    "attachments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "employee.attachments"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "tempAddress": {
+      "type": "component",
+      "repeatable": false,
+      "component": "address.india-address"
+    },
+    "permanentAddress": {
+      "type": "component",
+      "repeatable": false,
+      "component": "address.india-address"
+    },
+    "profilePic": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

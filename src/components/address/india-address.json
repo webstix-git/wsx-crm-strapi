@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_address_india_addresses",
+  "info": {
+    "displayName": "India Address",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "streetInfo": {
+      "type": "string"
+    },
+    "streetInfo2": {
+      "type": "string"
+    },
+    "areaName": {
+      "type": "string"
+    },
+    "cityName": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "pinCode": {
+      "type": "string"
+    },
+    "landmark": {
+      "type": "string"
+    }
+  }
+}

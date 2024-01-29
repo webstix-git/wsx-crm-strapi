@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_employee_emergency_contacts",
+  "info": {
+    "displayName": "Emergency Contact",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "contactName": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "relation": {
+      "type": "string"
+    }
+  }
+}

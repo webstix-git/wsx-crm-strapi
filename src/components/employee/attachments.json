@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_employee_attachments",
+  "info": {
+    "displayName": "attachments",
+    "icon": "walk"
+  },
+  "options": {},
+  "attributes": {
+    "uploadName": {
+      "type": "string"
+    },
+    "uploads": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

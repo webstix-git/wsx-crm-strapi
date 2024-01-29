@@ -18,6 +18,24 @@ export interface AddressAddress extends Schema.Component {
   };
 }
 
+export interface AddressIndiaAddress extends Schema.Component {
+  collectionName: 'components_address_india_addresses';
+  info: {
+    displayName: 'India Address';
+    icon: 'book';
+    description: '';
+  };
+  attributes: {
+    streetInfo: Attribute.String;
+    streetInfo2: Attribute.String;
+    areaName: Attribute.String;
+    cityName: Attribute.String;
+    state: Attribute.String;
+    pinCode: Attribute.String;
+    landmark: Attribute.String;
+  };
+}
+
 export interface AgreementAgreement extends Schema.Component {
   collectionName: 'components_agreement_agreements';
   info: {
@@ -65,6 +83,68 @@ export interface AgreementPaymentHistory extends Schema.Component {
         'Wire Transfer'
       ]
     >;
+    employee: Attribute.Relation<
+      'agreement.payment-history',
+      'oneToOne',
+      'api::employee.employee'
+    >;
+  };
+}
+
+export interface BlocksBlocks extends Schema.Component {
+  collectionName: 'components_blocks_blocks';
+  info: {
+    displayName: 'Blocks';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    jobTitle: Attribute.String;
+    jobDetails: Attribute.Text;
+    jobDate: Attribute.Date;
+    jobType: Attribute.Enumeration<
+      [
+        'Maintenance',
+        'Quote',
+        'Issue',
+        'Purchase',
+        'Website Care',
+        'Upgrades',
+        'Basecamp',
+        'Refund',
+        'Bonus'
+      ]
+    >;
+    ticketId: Attribute.String;
+    blocksUsed: Attribute.String;
+    creditDebit: Attribute.String;
+    referenceURL: Attribute.String;
+    approvedScheduled: Attribute.Boolean;
+    admin_user: Attribute.Relation<'blocks.blocks', 'oneToOne', 'admin::user'>;
+  };
+}
+
+export interface EmployeeAttachments extends Schema.Component {
+  collectionName: 'components_employee_attachments';
+  info: {
+    displayName: 'attachments';
+    icon: 'walk';
+  };
+  attributes: {
+    uploadName: Attribute.String;
+    uploads: Attribute.Media;
+  };
+}
+
+export interface EmployeeEmergencyContact extends Schema.Component {
+  collectionName: 'components_employee_emergency_contacts';
+  info: {
+    displayName: 'Emergency Contact';
+    icon: 'briefcase';
+  };
+  attributes: {
+    contactName: Attribute.String;
+    phone: Attribute.String;
+    relation: Attribute.String;
   };
 }
 
@@ -126,8 +206,12 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'address.address': AddressAddress;
+      'address.india-address': AddressIndiaAddress;
       'agreement.agreement': AgreementAgreement;
       'agreement.payment-history': AgreementPaymentHistory;
+      'blocks.blocks': BlocksBlocks;
+      'employee.attachments': EmployeeAttachments;
+      'employee.emergency-contact': EmployeeEmergencyContact;
       'login-info.login-info': LoginInfoLoginInfo;
       'socials.socials': SocialsSocials;
     }

@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_blocks_blocks",
+  "info": {
+    "displayName": "Blocks",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "jobTitle": {
+      "type": "string"
+    },
+    "jobDetails": {
+      "type": "text"
+    },
+    "jobDate": {
+      "type": "date"
+    },
+    "jobType": {
+      "type": "enumeration",
+      "enum": [
+        "Maintenance",
+        "Quote",
+        "Issue",
+        "Purchase",
+        "Website Care",
+        "Upgrades",
+        "Basecamp",
+        "Refund",
+        "Bonus"
+      ]
+    },
+    "ticketId": {
+      "type": "string"
+    },
+    "blocksUsed": {
+      "type": "string"
+    },
+    "creditDebit": {
+      "type": "string"
+    },
+    "referenceURL": {
+      "type": "string"
+    },
+    "approvedScheduled": {
+      "type": "boolean"
+    },
+    "admin_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    }
+  }
+}
