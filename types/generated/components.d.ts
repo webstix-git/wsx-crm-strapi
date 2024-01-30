@@ -167,6 +167,7 @@ export interface LoginInfoLoginInfo extends Schema.Component {
     password: Attribute.String;
     loginType: Attribute.Enumeration<
       [
+        'CMS Info',
         'FTP Info',
         'DNS Info',
         'Control Panel Info',

@@ -22,6 +22,7 @@
     "loginType": {
       "type": "enumeration",
       "enum": [
+        "CMS Info",
         "FTP Info",
         "DNS Info",
         "Control Panel Info",
