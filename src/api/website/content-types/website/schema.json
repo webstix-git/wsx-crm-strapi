@@ -38,6 +38,11 @@
       "components": [
         "blocks.blocks"
       ]
+    },
+    "wordpress_plugins": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wordpress-plugin.wordpress-plugin"
     }
   }
 }

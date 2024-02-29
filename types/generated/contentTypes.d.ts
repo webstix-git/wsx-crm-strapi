@@ -1009,6 +1009,11 @@ export interface ApiWebsiteWebsite extends Schema.CollectionType {
     >;
     loginInfo: Attribute.DynamicZone<['login-info.login-info']>;
     blocksHistory: Attribute.DynamicZone<['blocks.blocks']>;
+    wordpress_plugins: Attribute.Relation<
+      'api::website.website',
+      'oneToMany',
+      'api::wordpress-plugin.wordpress-plugin'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1020,6 +1025,48 @@ export interface ApiWebsiteWebsite extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::website.website',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWordpressPluginWordpressPlugin
+  extends Schema.CollectionType {
+  collectionName: 'wordpress_plugins';
+  info: {
+    singularName: 'wordpress-plugin';
+    pluralName: 'wordpress-plugins';
+    displayName: 'wordpressPlugin';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    pluginName: Attribute.String;
+    pluginDesc: Attribute.Text;
+    pluginType: Attribute.Enumeration<['Free', 'Commercial', 'Webstix Owned']>;
+    pluginVersion: Attribute.String;
+    pluginURL: Attribute.String;
+    price: Attribute.String;
+    websites: Attribute.Relation<
+      'api::wordpress-plugin.wordpress-plugin',
+      'oneToMany',
+      'api::website.website'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::wordpress-plugin.wordpress-plugin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::wordpress-plugin.wordpress-plugin',
       'oneToOne',
       'admin::user'
     > &
@@ -1050,6 +1097,7 @@ declare module '@strapi/types' {
       'api::employee.employee': ApiEmployeeEmployee;
       'api::service.service': ApiServiceService;
       'api::website.website': ApiWebsiteWebsite;
+      'api::wordpress-plugin.wordpress-plugin': ApiWordpressPluginWordpressPlugin;
     }
   }
 }
